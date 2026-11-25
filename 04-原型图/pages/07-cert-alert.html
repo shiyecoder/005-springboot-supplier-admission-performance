@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>证照与预警</title>
+<link rel="stylesheet" href="../mock.css">
+</head>
+<body data-crumb="证照与预警" data-user="王涛" data-role="采购专员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>证照与预警</h1><p>过期证照未更新时系统自动暂停该供应商新增合作类目，并进入整改流程</p></div>
+        <div class="right"><button class="btn btn-default"><svg><use href="#i-refresh"/></svg>重新扫描</button></div>
+      </div>
+
+      <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
+        <div class="metric"><div class="k">已过期</div><div class="v" style="color:#B03035">4<small> 张</small></div><div class="d">涉及 4 家供应商</div></div>
+        <div class="metric"><div class="k">30 天内到期</div><div class="v" style="color:#A9701F">3<small> 张</small></div><div class="d">已发送站内提醒</div></div>
+        <div class="metric"><div class="k">31–90 天到期</div><div class="v">6<small> 张</small></div><div class="d">建议提前换证</div></div>
+        <div class="metric"><div class="k">在库证照</div><div class="v">38<small> 张</small></div><div class="d">覆盖 22 家供应商</div></div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="filter">
+          <div class="fi"><label>供应商</label><input class="inp wide" placeholder="企业名称 / 编码"></div>
+          <div class="fi"><label>证照类型</label><select class="sel"><option>全部</option><option>营业执照</option><option>质量体系</option><option>环境体系</option><option>特种许可</option></select></div>
+          <div class="fi"><label>状态</label><select class="sel"><option>全部</option><option>已过期</option><option>30 天内到期</option><option>有效</option><option>已作废</option></select></div>
+          <div class="fi" style="flex-direction:row;gap:8px"><button class="btn btn-primary"><svg><use href="#i-search"/></svg>查询</button><button class="btn btn-default">重置</button></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h"><h2>证照清单</h2><span class="sub">按到期日期升序 · 已过期置顶</span><div class="right"><span class="tag tag-danger">4 张过期需处理</span></div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>供应商</th><th>证照类型</th><th>证照编号</th><th class="nowrap">到期日期</th><th>剩余天数</th><th>状态</th><th>版本</th><th class="nowrap">操作</th></tr></thead>
+          <tbody>
+            <tr><td><div>华鑫金属材料有限公司</div><div class="sub2">SUP-2026-0012</div></td><td>环保排污许可</td><td class="mono">91310115-2023-0781</td><td class="nowrap">2026-09-30</td><td class="tnum" style="color:#B03035">-31</td><td><span class="tag tag-danger">已过期</span></td><td>v2</td><td class="nowrap"><a href="#">催办</a> <a href="09-rectify.html">整改</a></td></tr>
+            <tr><td><div>安泰物流服务有限公司</div><div class="sub2">SUP-2026-0003</div></td><td>道路运输经营许可</td><td class="mono">沪交运管 3101-2288</td><td class="nowrap">2026-09-12</td><td class="tnum" style="color:#B03035">-49</td><td><span class="tag tag-danger">已过期</span></td><td>v1</td><td class="nowrap"><a href="#">催办</a> <a href="#">查看</a></td></tr>
+            <tr><td><div>广源五金制品厂</div><div class="sub2">SUP-2025-0044</div></td><td>营业执照</td><td class="mono">91310115MA1K8MN66P</td><td class="nowrap">2025-12-20</td><td class="tnum" style="color:#B03035">-315</td><td><span class="tag tag-danger">已过期</span></td><td>v1</td><td class="nowrap"><a href="#">查看</a> <a href="#">作废</a></td></tr>
+            <tr><td><div>金鹏智能装备有限公司</div><div class="sub2">SUP-2026-0021</div></td><td>特种设备制造许可</td><td class="mono">TS2733C08-2024</td><td class="nowrap">2026-10-05</td><td class="tnum" style="color:#B03035">-26</td><td><span class="tag tag-danger">已过期</span></td><td>v3</td><td class="nowrap"><a href="#">催办</a> <a href="#">换证</a></td></tr>
+            <tr><td><div>恒泰电子元件股份有限公司</div><div class="sub2">SUP-2026-0015</div></td><td>质量管理体系认证</td><td class="mono">ISO9001-2024-2201</td><td class="nowrap">2026-11-22</td><td class="tnum" style="color:#A9701F">22</td><td><span class="tag tag-warning">30 天内到期</span></td><td>v2</td><td class="nowrap"><a href="#">提醒</a> <a href="#">换证</a></td></tr>
+            <tr><td><div>瑞达包装材料有限公司</div><div class="sub2">SUP-2026-0009</div></td><td>食品接触材料检测报告</td><td class="mono">FCM-2025-3371</td><td class="nowrap">2026-11-05</td><td class="tnum" style="color:#A9701F">5</td><td><span class="tag tag-warning">30 天内到期</span></td><td>v1</td><td class="nowrap"><a href="#">提醒</a> <a href="#">换证</a></td></tr>
+            <tr><td><div>新元化工原料有限公司</div><div class="sub2">SUP-2026-0007</div></td><td>危险化学品经营许可</td><td class="mono">沪危化经字 2023-0912</td><td class="nowrap">2026-11-18</td><td class="tnum" style="color:#A9701F">18</td><td><span class="tag tag-warning">30 天内到期</span></td><td>v4</td><td class="nowrap"><a href="#">提醒</a> <a href="#">换证</a></td></tr>
+            <tr><td><div>德胜精密机械有限公司</div><div class="sub2">SUP-2026-0018</div></td><td>质量管理体系认证</td><td class="mono">ISO9001-2025-1188</td><td class="nowrap">2027-06-11</td><td class="tnum">223</td><td><span class="tag tag-success">有效</span></td><td>v1</td><td class="nowrap"><a href="#">查看</a> <a href="#">历史</a></td></tr>
+            <tr><td><div>长信线缆制造有限公司</div><div class="sub2">SUP-2026-0014</div></td><td>强制性产品认证 CCC</td><td class="mono">CCC-2024-778812</td><td class="nowrap">2027-02-14</td><td class="tnum">106</td><td><span class="tag tag-success">有效</span></td><td>v1</td><td class="nowrap"><a href="#">查看</a> <a href="#">历史</a></td></tr>
+            <tr><td><div>宏泰塑胶科技有限公司</div><div class="sub2">SUP-2026-0011</div></td><td>环境管理体系认证</td><td class="mono">ISO14001-2023-4409</td><td class="nowrap">2026-12-08</td><td class="tnum">38</td><td><span class="tag tag-info">有效</span></td><td>v2</td><td class="nowrap"><a href="#">查看</a> <a href="#">历史</a></td></tr>
+          </tbody>
+        </table></div>
+        <div class="pager"><span>共 38 条</span><div class="pg"><span>‹</span><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>›</span></div><select class="sel" style="width:100px;height:28px"><option>10 条/页</option><option>20 条/页</option><option>50 条/页</option></select></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("cert")</script>
+</body>
+</html>

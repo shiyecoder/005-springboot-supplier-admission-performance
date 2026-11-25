@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>资质审核台（评审抽屉）</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  .drawer-b{background:#F7FBFC}
+  .drawer{width:880px}
+  .sec{background:#fff;border:1px solid var(--c-border);border-radius:8px;padding:16px;margin-bottom:14px}
+  .sec h3{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .sec h3 .idx{width:20px;height:20px;border-radius:4px;background:rgba(35,122,139,.12);color:var(--c-secondary);font-size:11px;display:grid;place-items:center}
+  .doc{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--c-border);font-size:13px}
+  .doc:last-child{border-bottom:0}
+  .doc .nm{flex:1}
+  .doc .thumb{width:38px;height:28px;border-radius:3px;background:#EAF1F3;border:1px solid var(--c-border);display:grid;place-items:center;color:#8A9AA2;font-size:10px}
+  .score-in{width:72px;height:30px;border:1px solid var(--c-border);border-radius:6px;padding:0 8px;font-size:13px;font-family:inherit;text-align:right}
+  .sc-row{display:grid;grid-template-columns:1.1fr 78px 76px 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--c-border);font-size:13px}
+  .sc-row .w{font-size:11.5px;color:var(--c-text-3);text-align:right}
+  .sc-row .rs{font-size:12.5px;color:var(--c-text-2)}
+  .total{display:flex;align-items:center;gap:14px;background:rgba(35,122,139,.06);border:1px solid rgba(35,122,139,.2);border-radius:6px;padding:12px 14px;margin-top:12px}
+  .total .big{font-size:26px;font-weight:600;color:var(--c-primary);font-variant-numeric:tabular-nums}
+  textarea{width:100%;border:1px solid var(--c-border);border-radius:6px;padding:9px 11px;font-family:inherit;font-size:13px;resize:vertical;min-height:66px;color:var(--c-text)}
+  textarea:focus{outline:none;border-color:var(--c-secondary);box-shadow:0 0 0 2px rgba(35,122,139,.15)}
+  .mini{display:flex;gap:18px;font-size:12.5px;color:var(--c-text-2);flex-wrap:wrap}
+  .mini b{color:var(--c-text);font-weight:500}
+</style>
+</head>
+<body data-crumb="准入申请 / 资质审核台" data-user="刘倩" data-role="评审人员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content" style="padding-right:920px">
+      <div class="page-head"><div><h1>资质审核台</h1><p>抽屉内完成材料核验与多维评分，不切页</p></div></div>
+      <div class="card"><div class="card-h"><h2>当前待办</h2></div>
+        <div class="empty"><svg><use href="#i-check"/></svg><div>右侧正在处理 ADM-2026-0058</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-mask"></div>
+<div class="drawer">
+  <div class="drawer-h">
+    <h2>准入审查</h2>
+    <span class="tag tag-warning">准入审核</span>
+    <span class="mono" style="font-size:12.5px">ADM-2026-0058</span>
+    <div style="margin-left:auto"><svg class="i" style="color:#8A9AA2"><use href="#i-close"/></svg></div>
+  </div>
+  <div class="drawer-b">
+    <div class="sec">
+      <div class="mini">
+        <span>企业名称 <b>中科新材料科技有限公司</b></span>
+        <span>供应类别 <b>原材料 / 特种合金</b></span>
+        <span>责任人 <b>王涛</b></span>
+        <span>提交 <b>2026-10-28 11:20</b></span>
+        <span>截止 <b style="color:#B03035">2026-11-02</b></span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3><span class="idx">1</span>材料核验</h3>
+      <div class="doc"><div class="thumb">IMG</div><div class="nm">营业执照 · 91310115MA1K7TQ41X</div><span class="tag tag-success">有效</span><a href="#">查看</a></div>
+      <div class="doc"><div class="thumb">IMG</div><div class="nm">ISO9001 质量管理体系认证 · 2027-05-30 到期</div><span class="tag tag-success">有效</span><a href="#">查看</a></div>
+      <div class="doc"><div class="thumb">IMG</div><div class="nm">ISO14001 环境管理体系认证 · 2026-11-15 到期</div><span class="tag tag-warning">30 天内到期</span><a href="#">查看</a></div>
+      <div class="doc"><div class="thumb">PDF</div><div class="nm">近一年审计报告 · 2.4 MB</div><span class="tag tag-success">已上传</span><a href="#">查看</a></div>
+      <div class="doc"><div class="thumb">IMG</div><div class="nm">生产车间现场照片（3 张）</div><span class="tag tag-success">已上传</span><a href="#">查看</a></div>
+      <div class="doc"><div class="thumb">IMG</div><div class="nm">排污许可证 · <b style="color:#B03035">缺失</b></div><span class="tag tag-danger">必填缺失</span><a href="#">催办</a></div>
+      <div class="warnbox" style="margin-top:10px">该类目要求 6 项材料，当前缺 1 项（排污许可证）。提交下一节点前必须补齐，或选择“退回补充”并说明原因。</div>
+    </div>
+
+    <div class="sec">
+      <h3><span class="idx">2</span>多维评分 <span class="sub2" style="font-weight:400">权重：质量 30% · 技术 25% · 交付 20% · 价格 15% · 服务 10%</span></h3>
+      <div class="sc-row" style="font-size:12px;color:var(--c-text-3);border-bottom:1px solid var(--c-border)"><span>评分维度</span><span>权重</span><span>得分</span><span>评分要点</span></div>
+      <div class="sc-row"><span>质量保证能力</span><span class="w">30%</span><input class="score-in" value="88"><span class="rs">体系认证齐全，抽检合格率 98.6%</span></div>
+      <div class="sc-row"><span>技术研发能力</span><span class="w">25%</span><input class="score-in" value="84"><span class="rs">研发人员占比 18%，有 2 项发明专利</span></div>
+      <div class="sc-row"><span>交付保障能力</span><span class="w">20%</span><input class="score-in" value="80"><span class="rs">月产能 600 吨，应急补货 96 小时</span></div>
+      <div class="sc-row"><span>价格竞争力</span><span class="w">15%</span><input class="score-in" value="76"><span class="rs">报价高于市场均价 4.2%</span></div>
+      <div class="sc-row"><span>服务响应</span><span class="w">10%</span><input class="score-in" value="90"><span class="rs">承诺 2 小时响应，24 小时到场</span></div>
+      <div class="total">
+        <div><div class="sub2">加权总分</div><div class="big">84.3</div></div>
+        <div style="flex:1"><div class="sub2">评价结论建议</div><div style="font-size:13px">建议准入，等级 <span class="lvl lvl-B">B</span>（≥85 为 A，75–85 为 B）</div></div>
+        <span class="tag tag-info">本人评分 · 已保存</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3><span class="idx">3</span>评审意见 <span class="sub2" style="font-weight:400">退回或驳回时原因不少于 5 个字</span></h3>
+      <textarea placeholder="请填写资质核验结论、存疑项与建议">材料整体齐全，质量管理体系完整；排污许可证缺失需补齐后再提交审批。价格高于市场均价 4.2%，建议在准入后首次评价中重点关注价格偏离。</textarea>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="tag tag-neutral">材料齐全</span><span class="tag tag-neutral">价格偏高</span><span class="tag tag-neutral">需现场复核</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3><span class="idx">4</span>流转记录</h3>
+      <div class="timeline">
+        <div class="tl-item done"><div class="tl-t">供应商提交申请 · 李国强</div><div class="tl-m">2026-10-28 11:20:33 · 草稿 → 准入审核</div></div>
+        <div class="tl-item done"><div class="tl-t">采购专员受理 · 王涛</div><div class="tl-m">2026-10-28 14:05:12 · 分配评审人 刘倩、陈立</div></div>
+        <div class="tl-item"><div class="tl-t">专业评审进行中</div><div class="tl-m">刘倩已评分 · 陈立待评分</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-f">
+    <button class="btn btn-default">保存草稿</button>
+    <button class="btn btn-danger">退回补充</button>
+    <button class="btn btn-default">驳回</button>
+    <button class="btn btn-primary">提交审批</button>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("admission")</script>
+</body>
+</html>

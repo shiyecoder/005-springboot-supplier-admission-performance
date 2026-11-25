@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>个人中心</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  .split{display:grid;grid-template-columns:320px 1fr;gap:16px;align-items:start}
+  .avatar-box{text-align:center;padding:8px 0 16px;border-bottom:1px solid var(--c-border);margin-bottom:16px}
+  .avatar-box .av{width:88px;height:88px;border-radius:50%;object-fit:cover;background:#EAF1F3;border:3px solid #fff;box-shadow:0 0 0 1px var(--c-border);margin:0 auto 12px;display:block}
+  .avatar-box .n{font-size:16px;font-weight:600}
+  .avatar-box .r{font-size:12.5px;color:var(--c-text-3);margin-top:2px}
+  .nav-side a{display:block;padding:9px 12px;border-radius:6px;font-size:13.5px;color:var(--c-text-2);margin-bottom:2px}
+  .nav-side a.on{background:rgba(35,122,139,.1);color:var(--c-secondary);font-weight:600}
+</style>
+</head>
+<body data-crumb="个人中心" data-user="周敏" data-role="采购管理员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head"><div><h1>个人中心</h1><p>修改资料、密码与头像；头像上传后右上角同步刷新</p></div></div>
+      <div class="split">
+        <div class="card">
+          <div class="avatar-box">
+            <img class="av" src="../avatar.png" alt="头像" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2288%22 height=%2288%22><rect width=%2288%22 height=%2288%22 fill=%22%23EAF1F3%22/><text x=%2244%22 y=%2254%22 font-size=%2230%22 text-anchor=%22middle%22 fill=%22%238A9AA2%22>周</text></svg>'">
+            <div class="n">周敏</div><div class="r">采购管理员 · 供应链中心</div>
+            <div style="margin-top:12px"><button class="btn btn-default btn-sm"><svg><use href="#i-upload"/></svg>更换头像</button></div>
+            <div class="hint" style="margin-top:6px">JPG/PNG，≤2MB，建议 1:1</div>
+          </div>
+          <div class="nav-side">
+            <a href="#" class="on">基本资料</a>
+            <a href="#">修改密码</a>
+            <a href="#">我的消息</a>
+            <a href="#">操作记录</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <div class="card-h"><h2>基本资料</h2><span class="sub">手机号与邮箱用于接收站内提醒</span></div>
+            <div class="form-grid">
+              <div class="fitem"><label>账号</label><input class="inp" value="admin" disabled></div>
+              <div class="fitem"><label>姓名</label><input class="inp" value="周敏"></div>
+              <div class="fitem"><label>手机号</label><input class="inp" value="13800000011"></div>
+              <div class="fitem"><label>电子邮箱</label><input class="inp" value="zhoumin@corp.com"></div>
+              <div class="fitem"><label>所属组织</label><input class="inp" value="供应链中心" disabled></div>
+              <div class="fitem"><label>角色</label><input class="inp" value="采购管理员" disabled></div>
+            </div>
+            <div style="margin-top:18px;display:flex;justify-content:flex-end"><button class="btn btn-primary">保存资料</button></div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><h2>修改密码</h2><span class="sub">密码使用 BCrypt 保存，任何接口不返回密码字段</span></div>
+            <div class="form-grid one" style="max-width:420px">
+              <div class="fitem"><label>原密码</label><input class="inp" type="password" value="········"></div>
+              <div class="fitem"><label>新密码</label><input class="inp" type="password" placeholder="8–20 位，含字母与数字"></div>
+              <div class="fitem"><label>确认新密码</label><input class="inp" type="password" placeholder="再次输入新密码"></div>
+            </div>
+            <div class="note" style="margin-top:14px;max-width:520px">连续 5 次登录失败将锁定账号 10 分钟；修改密码后其他会话失效，需重新登录。</div>
+            <div style="margin-top:16px"><button class="btn btn-primary">确认修改</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("profile")</script>
+</body>
+</html>

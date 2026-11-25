@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>整改管理</title>
+<link rel="stylesheet" href="../mock.css">
+</head>
+<body data-crumb="整改管理" data-user="王涛" data-role="采购专员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>整改管理</h1><p>低于阈值自动生成整改任务，供应商提交措施，采购专员验证后关闭或退回</p></div>
+        <div class="right"><button class="btn btn-primary"><svg><use href="#i-plus"/></svg>新建整改任务</button></div>
+      </div>
+
+      <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
+        <div class="metric"><div class="k">待提交措施</div><div class="v" style="color:#A9701F">3<small> 条</small></div><div class="d">超期 1 条</div></div>
+        <div class="metric"><div class="k">待验证</div><div class="v">2<small> 条</small></div><div class="d">平均等待 1.4 天</div></div>
+        <div class="metric"><div class="k">本期已关闭</div><div class="v" style="color:#2D7A58">9<small> 条</small></div><div class="d">完成率 75%</div></div>
+        <div class="metric"><div class="k">转暂停/黑名单</div><div class="v" style="color:#B03035">2<small> 条</small></div><div class="d">连续两期不合格</div></div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="filter">
+          <div class="fi"><label>供应商</label><input class="inp wide" placeholder="企业名称 / 编码"></div>
+          <div class="fi"><label>整改状态</label><select class="sel"><option>全部</option><option>待提交措施</option><option>待验证</option><option>已关闭</option><option>已逾期</option></select></div>
+          <div class="fi"><label>来源</label><select class="sel"><option>全部</option><option>绩效评价</option><option>证照过期</option><option>现场评审</option><option>投诉</option></select></div>
+          <div class="fi"><label>截止区间</label><input class="inp" value="2026-10-01 ~ 2026-11-30" style="width:220px"></div>
+          <div class="fi" style="flex-direction:row;gap:8px"><button class="btn btn-primary"><svg><use href="#i-search"/></svg>查询</button><button class="btn btn-default">重置</button></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h"><h2>整改任务</h2><div class="right"><span class="tag tag-neutral">共 15 条</span></div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="nowrap">整改编号</th><th>供应商</th><th>问题来源</th><th>问题摘要</th><th>状态</th><th class="nowrap">截止日期</th><th>剩余</th><th class="nowrap">操作</th></tr></thead>
+          <tbody>
+            <tr><td class="mono nowrap">RCT-2026-0031</td><td>金鹏智能装备</td><td>绩效评价 · Q3</td><td>交付及时率 82%，低于目标 95%</td><td><span class="tag tag-warning">待验证</span></td><td class="nowrap">2026-11-08</td><td class="tnum">8 天</td><td class="nowrap"><a href="#">验证</a> <a href="#">详情</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0029</td><td>瑞达包装材料</td><td>证照过期</td><td>食品接触材料检测报告过期</td><td><span class="tag tag-warning">待提交措施</span></td><td class="nowrap">2026-11-05</td><td class="tnum" style="color:#B03035">5 天</td><td class="nowrap"><a href="#">催办</a> <a href="#">详情</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0027</td><td>安泰物流服务</td><td>投诉</td><td>运输破损率 2.8%，超合同上限</td><td><span class="tag tag-danger">已逾期</span></td><td class="nowrap">2026-10-20</td><td class="tnum" style="color:#B03035">-11 天</td><td class="nowrap"><a href="#">升级</a> <a href="#">详情</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0025</td><td>华鑫金属材料</td><td>证照过期</td><td>排污许可证过期未换证</td><td><span class="tag tag-warning">待提交措施</span></td><td class="nowrap">2026-11-15</td><td class="tnum">15 天</td><td class="nowrap"><a href="#">催办</a> <a href="#">详情</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0022</td><td>长信线缆制造</td><td>绩效评价 · Q3</td><td>价格偏离市场均价 +5.4%</td><td><span class="tag tag-warning">待验证</span></td><td class="nowrap">2026-11-10</td><td class="tnum">10 天</td><td class="nowrap"><a href="#">验证</a> <a href="#">详情</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0019</td><td>宏泰塑胶科技</td><td>现场评审</td><td>消防通道堆放物料</td><td><span class="tag tag-success">已关闭</span></td><td class="nowrap">2026-10-12</td><td class="tnum">—</td><td class="nowrap"><a href="#">详情</a> <a href="#">记录</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0015</td><td>新元化工原料</td><td>绩效评价 · Q2</td><td>质量合格率 91%，批次返工 2 次</td><td><span class="tag tag-success">已关闭</span></td><td class="nowrap">2026-09-28</td><td class="tnum">—</td><td class="nowrap"><a href="#">详情</a> <a href="#">记录</a></td></tr>
+            <tr><td class="mono nowrap">RCT-2026-0012</td><td>广源五金制品厂</td><td>绩效评价 · Q2</td><td>连续两期 D 级，启动黑名单审批</td><td><span class="tag tag-danger">已转黑名单</span></td><td class="nowrap">2026-07-15</td><td class="tnum">—</td><td class="nowrap"><a href="#">详情</a> <a href="#">审批单</a></td></tr>
+          </tbody>
+        </table></div>
+        <div class="pager"><span>共 15 条</span><div class="pg"><span>‹</span><span class="on">1</span><span>2</span><span>›</span></div><select class="sel" style="width:100px;height:28px"><option>10 条/页</option><option>20 条/页</option><option>50 条/页</option></select></div>
+      </div>
+
+      <div class="card">
+        <div class="card-h"><h2>整改详情 · RCT-2026-0031</h2><span class="tag tag-warning">待验证</span><div class="right"><span class="sub2">金鹏智能装备有限公司 · 责任人 王涛</span></div></div>
+        <div class="form-grid" style="margin-bottom:8px">
+          <div><div class="sub2">问题描述</div><div style="font-size:13px;margin-top:4px">2026 Q3 交付及时率 82%，低于目标 95%，主要延误集中在 8 月两批设备交付。</div></div>
+          <div><div class="sub2">供应商提交措施</div><div style="font-size:13px;margin-top:4px">增设专职计划员 1 名，与物流商签订时效赔付条款，9 月起周报交付进度。</div></div>
+        </div>
+        <hr class="sep">
+        <div class="form-grid">
+          <div class="fitem"><label>验证结论</label><select class="sel"><option>验证通过，关闭整改</option><option>验证不通过，退回重新整改</option><option>延长整改期限</option></select></div>
+          <div class="fitem"><label>验证意见（≥5 字）</label><input class="inp" placeholder="如：9-10 月交付及时率已回升至 94%"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:14px"><button class="btn btn-default">查看附件（3）</button><button class="btn btn-primary" style="margin-left:auto">提交验证</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("rectify")</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>供应商名录</title>
+<link rel="stylesheet" href="../mock.css">
+</head>
+<body data-crumb="供应商名录" data-user="周敏" data-role="采购管理员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>供应商名录</h1><p>已准入供应商主档，共 22 家 · 合作状态与风险等级来自最近一次评级</p></div>
+        <div class="right">
+          <button class="btn btn-default"><svg><use href="#i-export"/></svg>导出筛选结果</button>
+          <button class="btn btn-primary"><svg><use href="#i-plus"/></svg>新建供应商</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="filter">
+          <div class="fi"><label>企业名称 / 编码</label><input class="inp wide" placeholder="支持模糊匹配"></div>
+          <div class="fi"><label>供应类别</label><select class="sel"><option>全部</option><option>原材料</option><option>电子件</option><option>包材</option><option>设备</option><option>服务</option></select></div>
+          <div class="fi"><label>资质到期区间</label><input class="inp" value="2026-10-01 ~ 2027-03-31" style="width:220px"></div>
+          <div class="fi"><label>合作状态</label><select class="sel"><option>全部</option><option>合格</option><option>暂停</option><option>限期整改</option><option>黑名单</option></select></div>
+          <div class="fi"><label>风险等级</label><select class="sel"><option>全部</option><option>低</option><option>中</option><option>高</option></select></div>
+          <div class="fi"><label>评价周期</label><select class="sel"><option>全部</option><option>月度</option><option>季度</option><option>年度</option></select></div>
+          <div class="fi" style="flex-direction:row;gap:8px">
+            <button class="btn btn-primary"><svg><use href="#i-search"/></svg>查询</button>
+            <button class="btn btn-default">重置</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h">
+          <h2>供应商列表</h2>
+          <span class="sub">按更新时间倒序 · 默认每页 10 条</span>
+          <div class="right"><span class="tag tag-neutral">共 22 条</span></div>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr>
+              <th style="width:36px"><input type="checkbox"></th>
+              <th class="nowrap">供应商编码</th><th>企业名称</th><th>供应类别</th><th>等级</th>
+              <th>合作状态</th><th>风险等级</th><th class="nowrap">资质到期</th><th class="nowrap">最近评价</th><th class="nowrap">操作</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0012</td>
+                <td><div>华鑫金属材料有限公司</div><div class="sub2">91310115MA1K3XY02B · 联系人 李国强</div></td>
+                <td>原材料</td>
+                <td><span class="lvl lvl-A">A</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-success">低</span></td>
+                <td class="nowrap">2027-04-18</td>
+                <td class="nowrap">2026-10-08</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0015</td>
+                <td><div>恒泰电子元件股份有限公司</div><div class="sub2">91310115MA1K4AB77C · 联系人 陈雅</div></td>
+                <td>电子件</td>
+                <td><span class="lvl lvl-B">B</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-success">低</span></td>
+                <td class="nowrap">2026-11-22</td>
+                <td class="nowrap">2026-10-08</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0009</td>
+                <td><div>瑞达包装材料有限公司</div><div class="sub2">91310115MA1K2CD31F · 联系人 王海</div></td>
+                <td>包材</td>
+                <td><span class="lvl lvl-B">B</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-warning">中</span></td>
+                <td class="nowrap">2026-10-05</td>
+                <td class="nowrap">2026-10-05</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0021</td>
+                <td><div>金鹏智能装备有限公司</div><div class="sub2">91310115MA1K5EF88H · 联系人 赵启明</div></td>
+                <td>设备</td>
+                <td><span class="lvl lvl-C">C</span></td>
+                <td><span class="tag tag-warning">限期整改</span></td>
+                <td><span class="tag tag-danger">高</span></td>
+                <td class="nowrap">2027-01-30</td>
+                <td class="nowrap">2026-09-30</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="09-rectify.html">整改</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0003</td>
+                <td><div>安泰物流服务有限公司</div><div class="sub2">91310115MA1K1GH55J · 联系人 孙倩</div></td>
+                <td>服务</td>
+                <td><span class="lvl lvl-C">C</span></td>
+                <td><span class="tag tag-warning">暂停</span></td>
+                <td><span class="tag tag-danger">高</span></td>
+                <td class="nowrap">2026-09-12</td>
+                <td class="nowrap">2026-09-28</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">恢复</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0018</td>
+                <td><div>德胜精密机械有限公司</div><div class="sub2">91310115MA1K6IJ22K · 联系人 刘振</div></td>
+                <td>设备</td>
+                <td><span class="lvl lvl-A">A</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-success">低</span></td>
+                <td class="nowrap">2027-06-11</td>
+                <td class="nowrap">2026-10-01</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0007</td>
+                <td><div>新元化工原料有限公司</div><div class="sub2">91310115MA1K7KL90L · 联系人 何静</div></td>
+                <td>原材料</td>
+                <td><span class="lvl lvl-B">B</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-success">低</span></td>
+                <td class="nowrap">2027-08-02</td>
+                <td class="nowrap">2026-10-02</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2025-0044</td>
+                <td><div>广源五金制品厂</div><div class="sub2">91310115MA1K8MN66P · 联系人 吴磊</div></td>
+                <td>原材料</td>
+                <td><span class="lvl lvl-D">D</span></td>
+                <td><span class="tag tag-danger">黑名单</span></td>
+                <td><span class="tag tag-danger">高</span></td>
+                <td class="nowrap">2025-12-20</td>
+                <td class="nowrap">2026-07-15</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">解除</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0011</td>
+                <td><div>宏泰塑胶科技有限公司</div><div class="sub2">91310115MA1K9OP12Q · 联系人 郑楠</div></td>
+                <td>包材</td>
+                <td><span class="lvl lvl-B">B</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-warning">中</span></td>
+                <td class="nowrap">2026-12-08</td>
+                <td class="nowrap">2026-10-06</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td class="mono nowrap">SUP-2026-0014</td>
+                <td><div>长信线缆制造有限公司</div><div class="sub2">91310115MA1K0QR88S · 联系人 马涛</div></td>
+                <td>电子件</td>
+                <td><span class="lvl lvl-C">C</span></td>
+                <td><span class="tag tag-success">合格</span></td>
+                <td><span class="tag tag-warning">中</span></td>
+                <td class="nowrap">2027-02-14</td>
+                <td class="nowrap">2026-10-07</td>
+                <td class="nowrap"><a href="04-supplier-detail.html">查看</a> <a href="#">评价</a> <a href="#">更多</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager">
+          <span>共 22 条</span>
+          <div class="pg"><span>‹</span><span class="on">1</span><span>2</span><span>3</span><span>›</span></div>
+          <select class="sel" style="width:100px;height:28px"><option>10 条/页</option><option>20 条/页</option><option>50 条/页</option></select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("supplier")</script>
+</body>
+</html>

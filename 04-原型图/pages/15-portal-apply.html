@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>供应商门户 · 准入申请</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  body{background:#EEF4F5}
+  .portal-nav a.cur{background:rgba(255,255,255,.16)}
+  .who2{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13px}
+  .who2 img{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2)}
+  .up{border:1px dashed #C9D6DA;border-radius:8px;padding:16px;text-align:center;color:#8A9AA2;font-size:12.5px;background:#FBFDFD}
+  .up:hover{border-color:#237A8B;color:#237A8B}
+  .up svg{width:22px;height:22px;margin-bottom:6px}
+  .doclist{margin-top:10px}
+  .docline{display:flex;align-items:center;gap:10px;font-size:12.5px;padding:8px 0;border-bottom:1px dashed #EDF2F4}
+  .docline .th{width:34px;height:26px;border-radius:3px;background:#EAF1F3;color:#8A9AA2;display:grid;place-items:center;font-size:10px}
+  .docline .nm{flex:1}
+  .docline .rm{color:#B03035;cursor:pointer}
+  .form-wrap{background:#fff;border:1px solid #DCE5E8;border-radius:8px;padding:24px}
+  .form-wrap .group-t{border-left-color:#237A8B}
+</style>
+</head>
+<body>
+<div class="portal-top">
+  <div class="b"><span style="width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:13px">供</span>供应商服务门户</div>
+  <nav class="portal-nav">
+    <a href="14-portal-home.html">我的工作台</a>
+    <a href="15-portal-apply.html" class="on">准入申请</a>
+    <a href="14-portal-home.html">我的证照</a>
+    <a href="14-portal-home.html">绩效结果</a>
+    <a href="14-portal-home.html">整改任务</a>
+  </nav>
+  <div class="who2"><img src="../avatar.png" alt="" onerror="this.style.visibility='hidden'"><div><div>李国强</div><div style="font-size:11px;opacity:.7">华鑫金属材料有限公司</div></div></div>
+</div>
+
+<div class="portal-wrap" style="max-width:960px">
+  <div class="page-head">
+    <div><h1>准入申请</h1><p>按供应类目要求上传证照，系统校验必填材料与有效期；保存草稿后可随时继续</p></div>
+    <div class="right"><span class="tag tag-neutral">草稿</span><button class="btn btn-default">返回</button></div>
+  </div>
+
+  <div class="form-wrap">
+    <div class="group-t">企业基本信息</div>
+    <div class="form-grid">
+      <div class="fitem"><label><em>*</em>企业名称</label><input class="inp" value="中科新材料科技有限公司"></div>
+      <div class="fitem"><label><em>*</em>统一信用代码</label><input class="inp" value="91310115MA1K7TQ41X"><span class="hint">系统校验唯一性，同一代码不允许重复准入</span></div>
+      <div class="fitem"><label><em>*</em>供应类别</label><select class="sel"><option>原材料 / 特种合金</option><option>电子件</option><option>包材</option><option>设备</option><option>服务</option></select></div>
+      <div class="fitem"><label><em>*</em>联系人</label><input class="inp" value="李国强"></div>
+      <div class="fitem"><label><em>*</em>联系电话</label><input class="inp" value="13800006721"></div>
+      <div class="fitem"><label>电子邮箱</label><input class="inp" value="li.gq@zhongke-mat.com"></div>
+      <div class="fitem" style="grid-column:span 2"><label>注册地址</label><input class="inp" value="上海市浦东新区金桥路 288 号" style="max-width:640px"></div>
+    </div>
+
+    <div class="group-t">资质材料</div>
+    <div class="form-grid">
+      <div class="fitem"><label><em>*</em>营业执照</label>
+        <div class="up"><svg><use href="#i-upload"/></svg><div>点击或拖拽上传（JPG/PNG/PDF，≤10MB）</div></div>
+        <div class="doclist"><div class="docline"><div class="th">IMG</div><div class="nm">营业执照.jpg · 842 KB</div><span class="rm">删除</span></div></div>
+      </div>
+      <div class="fitem"><label><em>*</em>质量体系认证</label>
+        <div class="up"><svg><use href="#i-upload"/></svg><div>点击或拖拽上传</div></div>
+        <div class="doclist"><div class="docline"><div class="th">IMG</div><div class="nm">ISO9001.jpg · 1.1 MB</div><span class="rm">删除</span></div></div>
+      </div>
+      <div class="fitem"><label><em>*</em>环境管理体系认证</label>
+        <div class="up"><svg><use href="#i-upload"/></svg><div>点击或拖拽上传</div></div>
+        <div class="doclist"><div class="docline"><div class="th">IMG</div><div class="nm">ISO14001.jpg · 986 KB</div><span class="rm">删除</span></div></div>
+      </div>
+      <div class="fitem"><label><em>*</em>排污许可证</label>
+        <div class="up" style="border-color:#E3B7B9;background:#FDF7F7"><svg style="color:#B03035"><use href="#i-upload"/></svg><div style="color:#B03035">该类目必填，尚未上传</div></div>
+      </div>
+      <div class="fitem"><label>近一年审计报告</label>
+        <div class="up"><svg><use href="#i-upload"/></svg><div>点击或拖拽上传（PDF）</div></div>
+      </div>
+      <div class="fitem"><label>现场照片</label>
+        <div class="up"><svg><use href="#i-upload"/></svg><div>可上传多张，最多 6 张</div></div>
+      </div>
+    </div>
+
+    <div class="group-t">供货能力</div>
+    <div class="form-grid">
+      <div class="fitem"><label>年产能</label><input class="inp" value="600 吨"></div>
+      <div class="fitem"><label>主要客户</label><input class="inp" value="中车集团、上海电气"></div>
+      <div class="fitem" style="grid-column:span 2"><label>产能与交付说明</label><textarea class="inp" style="height:80px;width:100%;padding:8px 10px;max-width:640px">自有特种合金熔炼炉 3 台，配套光谱检测实验室；月均供货 50 吨，应急补货 96 小时。</textarea></div>
+    </div>
+
+    <div class="warnbox" style="margin-top:20px">提交前请确认：6 项必填材料齐全、证照在有效期内、统一信用代码无误。材料缺失将被形式审查退回。</div>
+
+    <div style="display:flex;gap:10px;margin-top:20px;justify-content:flex-end">
+      <button class="btn btn-default">保存草稿</button>
+      <button class="btn btn-primary">提交申请</button>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+</body>
+</html>

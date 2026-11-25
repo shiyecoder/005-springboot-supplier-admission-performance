@@ -1,0 +1,171 @@
+{
+  "results": [
+    {
+      "name": "01_login",
+      "note": "登录页（重做后的主题化登录）",
+      "title": "从准入到分层\n每一次评级都可核对"
+    },
+    {
+      "name": "02_dashboard",
+      "note": "供应风险看板（6 指标 + 6 图表，一屏内）",
+      "title": "供应风险看板"
+    },
+    {
+      "name": "03_supplier_list",
+      "note": "供应商名录（筛选 + 分页 + 厂区图）",
+      "title": "供应商名录"
+    },
+    {
+      "name": "04_supplier_detail",
+      "note": "供应商详情（主档/证照/关联单据/等级变化）",
+      "title": "供应商详情"
+    },
+    {
+      "name": "05_admission_list",
+      "note": "准入申请列表（待办优先 + 材料完整度）",
+      "title": "准入申请"
+    },
+    {
+      "name": "06_admission_detail",
+      "note": "准入详情抽屉（材料核验 + 评审明细）",
+      "title": "准入申请"
+    },
+    {
+      "name": "07_certificate",
+      "note": "证照与预警（过期/临期分桶）",
+      "title": "证照与预警"
+    },
+    {
+      "name": "08_performance_list",
+      "note": "绩效评价任务列表",
+      "title": "绩效评价"
+    },
+    {
+      "name": "09_performance_drawer",
+      "note": "绩效评分卡抽屉（多人评分明细）",
+      "title": "绩效评价"
+    },
+    {
+      "name": "10_rectification",
+      "note": "整改管理（状态 + 剩余天数）",
+      "title": "整改管理"
+    },
+    {
+      "name": "11_rectification_drawer",
+      "note": "整改详情（措施与验证）",
+      "title": "整改管理"
+    },
+    {
+      "name": "12_model",
+      "note": "动态分层模型（规则配置 + 效果统计 + 计算留痕）",
+      "title": "供应商动态分层模型"
+    },
+    {
+      "name": "13_model_drawer",
+      "note": "计算明细抽屉（指标明细 + 结果解释 + 人工修正）",
+      "title": "供应商动态分层模型"
+    },
+    {
+      "name": "14_report",
+      "note": "统计分析（趋势 + 模型结果分布 + 明细）",
+      "title": "统计分析"
+    },
+    {
+      "name": "15_system_user",
+      "note": "用户管理",
+      "title": "用户管理"
+    },
+    {
+      "name": "16_system_role",
+      "note": "角色管理（菜单分配树）",
+      "title": "角色管理"
+    },
+    {
+      "name": "17_system_menu",
+      "note": "菜单管理（侧栏不展示）",
+      "title": "菜单管理"
+    },
+    {
+      "name": "18_system_dict",
+      "note": "字典管理",
+      "title": "字典管理"
+    },
+    {
+      "name": "19_system_log",
+      "note": "操作日志",
+      "title": "操作日志"
+    },
+    {
+      "name": "20_profile",
+      "note": "个人中心（头像 / 资料 / 密码）",
+      "title": "个人中心"
+    },
+    {
+      "name": "21_login_register",
+      "note": "登录页注册表单",
+      "title": "从准入到分层\n每一次评级都可核对"
+    },
+    {
+      "name": "22_buyer_admission",
+      "note": "采购专员视角：准入形式审查",
+      "title": "准入申请"
+    },
+    {
+      "name": "23_buyer_rectification",
+      "note": "采购专员视角：整改验证",
+      "title": "整改管理"
+    },
+    {
+      "name": "24_reviewer_admission",
+      "note": "评审人员视角：待评分申请",
+      "title": "准入申请"
+    },
+    {
+      "name": "25_reviewer_score",
+      "note": "评审人员评分抽屉（五维加权）",
+      "title": "准入申请"
+    },
+    {
+      "name": "26_reviewer_performance",
+      "note": "评审人员视角：绩效任务",
+      "title": "绩效评价"
+    },
+    {
+      "name": "27_portal_home",
+      "note": "供应商门户工作台",
+      "title": "供应商准入与绩效评价管理系统"
+    },
+    {
+      "name": "28_portal_apply",
+      "note": "门户：准入申请（含证照上传）",
+      "title": "准入申请"
+    },
+    {
+      "name": "29_portal_certificate",
+      "note": "门户：我的证照",
+      "title": "我的证照"
+    },
+    {
+      "name": "30_portal_performance",
+      "note": "门户：我的绩效",
+      "title": "我的绩效"
+    },
+    {
+      "name": "31_portal_rectification",
+      "note": "门户：整改任务",
+      "title": "整改任务"
+    },
+    {
+      "name": "32_portal_company",
+      "note": "门户：我的企业",
+      "title": "我的企业"
+    }
+  ],
+  "consistency": {
+    "supplierTotal": 1,
+    "firstSupplier": "华鑫金属材料有限公司",
+    "certCountInDetail": 4,
+    "dashboardSupplierTotal": 22,
+    "brokenImageCandidate": "/uploads/seed/supplier/08.jpg"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>统计分析</title>
+<link rel="stylesheet" href="../mock.css">
+<style>.grid3{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}</style>
+</head>
+<body data-crumb="统计分析" data-user="周敏" data-role="采购管理员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>统计分析</h1><p>默认最近 30 天，可切本月 / 本季 / 本年；筛选项刷新后保持</p></div>
+        <div class="right"><select class="sel" style="width:130px"><option>最近 30 天</option><option>本月</option><option>本季度</option><option>本年</option></select><button class="btn btn-default"><svg><use href="#i-export"/></svg>导出</button></div>
+      </div>
+
+      <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
+        <div class="metric"><div class="k">准入通过率</div><div class="v">68.4<small>%</small></div><div class="d up">↑ 3.2%</div></div>
+        <div class="metric"><div class="k">平均准入时长</div><div class="v">11.6<small> 天</small></div><div class="d up">↓ 1.4 天</div></div>
+        <div class="metric"><div class="k">评价覆盖率</div><div class="v">91.7<small>%</small></div><div class="d">22 家中 20 家已评</div></div>
+        <div class="metric"><div class="k">整改按期完成率</div><div class="v">75.0<small>%</small></div><div class="d down">↓ 5.0%</div></div>
+      </div>
+
+      <div class="grid3" style="margin-top:12px">
+        <div class="chart">
+          <h3>准入阶段耗时</h3><div class="u">单位：天 · 各阶段平均停留</div>
+          <svg viewBox="0 0 520 200" width="100%" height="180">
+            <g stroke="#E8EEF0"><line x1="46" y1="30" x2="500" y2="30"/><line x1="46" y1="70" x2="500" y2="70"/><line x1="46" y1="110" x2="500" y2="110"/><line x1="46" y1="150" x2="500" y2="150"/></g>
+            <g>
+              <rect x="70" y="104" width="42" height="46" rx="3" fill="#15344A"/><text x="91" y="98" font-size="10.5" fill="#15344A" text-anchor="middle">4.6</text><text x="91" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">形式审查</text>
+              <rect x="160" y="76" width="42" height="74" rx="3" fill="#237A8B"/><text x="181" y="70" font-size="10.5" fill="#237A8B" text-anchor="middle">5.4</text><text x="181" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">专业评审</text>
+              <rect x="250" y="128" width="42" height="22" rx="3" fill="#2D5B6B"/><text x="271" y="122" font-size="10.5" fill="#2D5B6B" text-anchor="middle">1.4</text><text x="271" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">待审批</text>
+              <rect x="340" y="138" width="42" height="12" rx="3" fill="#7FA6B0"/><text x="361" y="132" font-size="10.5" fill="#5B6E77" text-anchor="middle">0.8</text><text x="361" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">归档</text>
+              <rect x="430" y="112" width="42" height="38" rx="3" fill="#A9701F"/><text x="451" y="106" font-size="10.5" fill="#A9701F" text-anchor="middle">3.4</text><text x="451" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">退回补充</text>
+            </g>
+          </svg>
+        </div>
+        <div class="chart">
+          <h3>创新模块结果分布</h3><div class="u">单位：次 · A–D 级计算次数</div>
+          <svg viewBox="0 0 320 200" width="100%" height="180">
+            <g stroke="#E8EEF0"><line x1="34" y1="150" x2="310" y2="150"/><line x1="34" y1="110" x2="310" y2="110"/><line x1="34" y1="70" x2="310" y2="70"/><line x1="34" y1="30" x2="310" y2="30"/></g>
+            <g>
+              <rect x="56" y="52" width="40" height="98" rx="3" fill="#2D7A58"/><text x="76" y="46" font-size="10.5" fill="#2D7A58" text-anchor="middle">12</text><text x="76" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">A</text>
+              <rect x="118" y="70" width="40" height="80" rx="3" fill="#237A8B"/><text x="138" y="64" font-size="10.5" fill="#237A8B" text-anchor="middle">10</text><text x="138" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">B</text>
+              <rect x="180" y="102" width="40" height="48" rx="3" fill="#A9701F"/><text x="200" y="96" font-size="10.5" fill="#A9701F" text-anchor="middle">6</text><text x="200" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">C</text>
+              <rect x="242" y="126" width="40" height="24" rx="3" fill="#B03035"/><text x="262" y="120" font-size="10.5" fill="#B03035" text-anchor="middle">3</text><text x="262" y="168" font-size="10.5" fill="#5B6E77" text-anchor="middle">D</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div class="card-h"><h2>供应商绩效明细</h2><span class="sub">点击行进入分层模型计算结果</span><div class="right"><span class="tag tag-neutral">22 家</span></div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>供应商</th><th>等级</th><th>综合得分</th><th>交付及时率</th><th>质量合格率</th><th>投诉</th><th>证照风险</th><th>采纳情况</th></tr></thead>
+          <tbody>
+            <tr><td>华鑫金属材料</td><td><span class="lvl lvl-A">A</span></td><td class="tnum">91.6</td><td class="tnum">96.1%</td><td class="tnum">98.6%</td><td class="tnum">0</td><td><span class="tag tag-warning">1 张过期</span></td><td><span class="tag tag-success">采纳</span></td></tr>
+            <tr><td>恒泰电子元件</td><td><span class="lvl lvl-A">A</span></td><td class="tnum">88.9</td><td class="tnum">94.8%</td><td class="tnum">99.1%</td><td class="tnum">1</td><td><span class="tag tag-warning">30 天内到期</span></td><td><span class="tag tag-success">采纳</span></td></tr>
+            <tr><td>德胜精密机械</td><td><span class="lvl lvl-A">A</span></td><td class="tnum">86.2</td><td class="tnum">93.0%</td><td class="tnum">98.2%</td><td class="tnum">0</td><td><span class="tag tag-success">正常</span></td><td><span class="tag tag-success">采纳</span></td></tr>
+            <tr><td>瑞达包装材料</td><td><span class="lvl lvl-B">B</span></td><td class="tnum">81.4</td><td class="tnum">91.2%</td><td class="tnum">97.4%</td><td class="tnum">2</td><td><span class="tag tag-warning">30 天内到期</span></td><td><span class="tag tag-warning">人工调整为 B</span></td></tr>
+            <tr><td>金鹏智能装备</td><td><span class="lvl lvl-C">C</span></td><td class="tnum">68.7</td><td class="tnum">82.0%</td><td class="tnum">95.6%</td><td class="tnum">3</td><td><span class="tag tag-danger">1 张过期</span></td><td><span class="tag tag-success">采纳</span></td></tr>
+            <tr><td>安泰物流服务</td><td><span class="lvl lvl-D">D</span></td><td class="tnum">54.2</td><td class="tnum">76.4%</td><td class="tnum">—</td><td class="tnum">5</td><td><span class="tag tag-danger">1 张过期</span></td><td><span class="tag tag-warning">人工调整为 D</span></td></tr>
+          </tbody>
+        </table></div>
+        <div class="pager"><span>共 22 条</span><div class="pg"><span>‹</span><span class="on">1</span><span>2</span><span>3</span><span>›</span></div><select class="sel" style="width:100px;height:28px"><option>10 条/页</option><option>20 条/页</option><option>50 条/页</option></select></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("report")</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>供应商门户 · 首页</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  body{background:#EEF4F5}
+  .hero{background:linear-gradient(120deg,#237A8B,#1B5E6B);color:#fff;padding:28px 32px;border-radius:8px;display:flex;align-items:center;gap:24px}
+  .hero h2{font-size:20px;font-weight:600}
+  .hero p{font-size:13px;color:rgba(255,255,255,.78);margin-top:4px}
+  .hero .st{margin-left:auto;display:flex;gap:10px}
+  .hero .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:6px;padding:8px 14px;text-align:center}
+  .hero .pill b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
+  .hero .pill span{font-size:11.5px;color:rgba(255,255,255,.72)}
+  .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:16px;margin-top:16px}
+  .task{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #EDF2F4;font-size:13px}
+  .task:last-child{border-bottom:0}
+  .task .ico{width:32px;height:32px;border-radius:6px;background:rgba(169,112,31,.12);color:#A9701F;display:grid;place-items:center;flex:none}
+  .task .t{flex:1}
+  .task .t b{font-weight:500;display:block}
+  .portal-nav a.cur{background:rgba(255,255,255,.16)}
+  .who2{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13px}
+  .who2 img{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<div class="portal-top">
+  <div class="b"><span style="width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:13px">供</span>供应商服务门户</div>
+  <nav class="portal-nav">
+    <a href="14-portal-home.html" class="on">我的工作台</a>
+    <a href="15-portal-apply.html">准入申请</a>
+    <a href="14-portal-home.html">我的证照</a>
+    <a href="14-portal-home.html">绩效结果</a>
+    <a href="14-portal-home.html">整改任务</a>
+  </nav>
+  <div class="who2"><img src="../avatar.png" alt="" onerror="this.style.visibility='hidden'"><div><div>李国强</div><div style="font-size:11px;opacity:.7">华鑫金属材料有限公司</div></div></div>
+</div>
+
+<div class="portal-wrap">
+  <div class="hero">
+    <div>
+      <h2>华鑫金属材料有限公司</h2>
+      <p>供应商编码 SUP-2026-0012 · A 级供应商 · 合格名录有效期至 2027-04-18</p>
+    </div>
+    <div class="st">
+      <div class="pill"><b>A</b><span>当前等级</span></div>
+      <div class="pill"><b>91.6</b><span>Q3 综合得分</span></div>
+      <div class="pill"><b>1</b><span>待办事项</span></div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="pcard">
+        <div class="card-h"><h2>准入进度</h2><span class="tag tag-success">已准入</span><div class="right"><span class="sub2">ADM-2026-0031</span></div></div>
+        <div class="steps">
+          <div class="step done"><div class="dot">✓</div>提交申请</div>
+          <div class="step done"><div class="dot">✓</div>形式审查</div>
+          <div class="step done"><div class="dot">✓</div>专业评审</div>
+          <div class="step done"><div class="dot">✓</div>审批准入</div>
+          <div class="step cur"><div class="dot">5</div>合作评价</div>
+        </div>
+        <div class="note" style="margin-top:14px">最近一次操作：2026-04-18 10:22 审批准入通过，等级 A，可供类目「原材料 / 金属型材」。</div>
+      </div>
+
+      <div class="pcard">
+        <div class="card-h"><h2>待我处理</h2><div class="right"><span class="tag tag-warning">1 项</span></div></div>
+        <div class="task">
+          <div class="ico"><svg class="i"><use href="#i-rectify"/></svg></div>
+          <div class="t"><b>排污许可证过期需换证</b><span class="sub2">整改编号 RCT-2026-0025 · 截止 2026-11-15 · 剩余 15 天</span></div>
+          <button class="btn btn-default btn-sm">提交措施</button>
+        </div>
+        <div class="task">
+          <div class="ico" style="background:rgba(45,122,88,.1);color:#2D7A58"><svg class="i"><use href="#i-check"/></svg></div>
+          <div class="t"><b>2026 Q3 绩效评价已发布</b><span class="sub2">综合得分 91.6 · A 级 · 2026-10-08 发布</span></div>
+          <button class="btn btn-default btn-sm">查看结果</button>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="card-h"><h2>我的证照</h2><div class="right"><a href="#" style="font-size:12.5px">全部 4 份</a></div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>证照类型</th><th class="nowrap">到期日期</th><th>状态</th><th class="nowrap">操作</th></tr></thead>
+          <tbody>
+            <tr><td>营业执照</td><td class="nowrap">长期</td><td><span class="tag tag-success">有效</span></td><td class="nowrap"><a href="#">查看</a></td></tr>
+            <tr><td>质量管理体系认证</td><td class="nowrap">2027-06-19</td><td><span class="tag tag-success">有效</span></td><td class="nowrap"><a href="#">换证</a></td></tr>
+            <tr><td>特种设备制造许可</td><td class="nowrap">2026-11-22</td><td><span class="tag tag-warning">30 天内到期</span></td><td class="nowrap"><a href="#">换证</a></td></tr>
+            <tr><td>环保排污许可</td><td class="nowrap">2026-09-30</td><td><span class="tag tag-danger">已过期</span></td><td class="nowrap"><a href="#">上传新证</a></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="pcard">
+        <div class="card-h"><h2>等级变化</h2><span class="sub">近 4 期</span></div>
+        <svg viewBox="0 0 320 150" width="100%" height="140">
+          <g stroke="#E8EEF0"><line x1="30" y1="24" x2="310" y2="24"/><line x1="30" y1="64" x2="310" y2="64"/><line x1="30" y1="104" x2="310" y2="104"/></g>
+          <polyline fill="none" stroke="#237A8B" stroke-width="2" points="64,72 138,64 212,48 288,40"/>
+          <g fill="#fff" stroke="#237A8B" stroke-width="2"><circle cx="64" cy="72" r="3.5"/><circle cx="138" cy="64" r="3.5"/><circle cx="212" cy="48" r="3.5"/><circle cx="288" cy="40" r="3.5"/></g>
+          <g font-size="10" fill="#5B6E77" text-anchor="middle"><text x="64" y="128">Q4'25</text><text x="138" y="128">Q1'26</text><text x="212" y="128">Q2'26</text><text x="288" y="128">Q3'26</text></g>
+          <g font-size="10" fill="#8A9AA2"><text x="8" y="28">95</text><text x="8" y="68">85</text><text x="8" y="108">75</text></g>
+        </svg>
+        <div class="note">Q3 得分 91.6（A 级）。主要减分项：排污许可过期；主要加分项：质量合格率 98.6%、零投诉。</div>
+      </div>
+
+      <div class="pcard">
+        <div class="card-h"><h2>企业信息</h2><div class="right"><a href="#" style="font-size:12.5px">申请变更</a></div></div>
+        <dl class="kv" style="grid-template-columns:88px 1fr;font-size:12.5px">
+          <dt>统一信用代码</dt><dd class="mono">91310115MA1K3XY02B</dd>
+          <dt>供应类别</dt><dd>原材料 / 金属型材</dd>
+          <dt>联系人</dt><dd>李国强 · 138****6721</dd>
+          <dt>主要客户</dt><dd>上汽零部件、振华重工</dd>
+          <dt>年产能</dt><dd>12,000 吨</dd>
+        </dl>
+        <div class="warnbox" style="margin-top:12px">信息变更需提交申请，审核通过后覆盖当前版本；变更期间原信息继续有效。</div>
+      </div>
+
+      <div class="pcard">
+        <div class="card-h"><h2>消息通知</h2></div>
+        <div class="task"><div class="t"><b>证照过期提醒</b><span class="sub2">排污许可证已于 2026-09-30 过期，请尽快上传新证</span></div><span class="sub2">10-06</span></div>
+        <div class="task"><div class="t"><b>绩效结果发布</b><span class="sub2">2026 Q3 评价已发布，得分 91.6</span></div><span class="sub2">10-08</span></div>
+        <div class="task"><div class="t"><b>整改任务派发</b><span class="sub2">RCT-2026-0025 已派发，截止 11-15</span></div><span class="sub2">10-06</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+</body>
+</html>

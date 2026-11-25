@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>绩效评价与评分卡</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  .split{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;align-items:start}
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .kpi .b{background:#F7FBFC;border:1px solid var(--c-border);border-radius:8px;padding:12px}
+  .kpi .b .k{font-size:12px;color:var(--c-text-2)}
+  .kpi .b .v{font-size:22px;font-weight:600;color:var(--c-primary);font-variant-numeric:tabular-nums}
+  .kpi .b .v small{font-size:12px;font-weight:400;color:var(--c-text-3)}
+</style>
+</head>
+<body data-crumb="绩效评价" data-user="刘倩" data-role="评审人员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>绩效评价</h1><p>按周期创建评价任务，多人独立打分后由系统按规则版本汇总，发布后不可修改</p></div>
+        <div class="right">
+          <select class="sel" style="width:130px"><option>2026 Q4</option><option>2026 Q3</option><option>2026 年 10 月</option></select>
+          <button class="btn btn-primary"><svg><use href="#i-plus"/></svg>创建评价任务</button>
+        </div>
+      </div>
+
+      <div class="split">
+        <div>
+          <div class="card">
+            <div class="card-h"><h2>评价任务</h2><div class="right"><span class="tag tag-warning">2 项待我评分</span></div></div>
+            <div class="tbl-wrap"><table>
+              <thead><tr><th class="nowrap">任务编号</th><th>供应商</th><th>周期</th><th>状态</th><th class="nowrap">截止</th></tr></thead>
+              <tbody>
+                <tr><td class="mono nowrap">PFM-2026-0112</td><td>华鑫金属材料</td><td>2026 Q4</td><td><span class="tag tag-warning">待评分</span></td><td class="nowrap">2026-11-05</td></tr>
+                <tr><td class="mono nowrap">PFM-2026-0111</td><td>恒泰电子元件</td><td>2026 Q4</td><td><span class="tag tag-warning">待评分</span></td><td class="nowrap">2026-11-05</td></tr>
+                <tr><td class="mono nowrap">PFM-2026-0110</td><td>瑞达包装材料</td><td>2026 Q4</td><td><span class="tag tag-info">评分中</span></td><td class="nowrap">2026-11-06</td></tr>
+                <tr><td class="mono nowrap">PFM-2026-0108</td><td>德胜精密机械</td><td>2026 Q4</td><td><span class="tag tag-success">已发布</span></td><td class="nowrap">—</td></tr>
+                <tr><td class="mono nowrap">PFM-2026-0418</td><td>华鑫金属材料</td><td>2026 Q3</td><td><span class="tag tag-success">已发布</span></td><td class="nowrap">—</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><h2>评分卡 · PFM-2026-0112</h2><span class="tag tag-warning">待评分</span><div class="right"><span class="sub2">规则版本 R2026.3 · 权重合计 100%</span></div></div>
+            <div class="kpi" style="margin-bottom:16px">
+              <div class="b"><div class="k">质量合格率</div><div class="v">97.8<small>%</small></div></div>
+              <div class="b"><div class="k">准时交付率</div><div class="v">94.2<small>%</small></div></div>
+              <div class="b"><div class="k">投诉次数</div><div class="v">1<small> 次</small></div></div>
+            </div>
+            <div class="score-row"><div class="nm">质量合格率<span>权重 30% · 目标 ≥98%</span></div><input class="score-in" style="width:72px;height:30px;border:1px solid #DCE5E8;border-radius:6px;text-align:right;padding:0 8px" value="92"><div><div class="bar"><i style="width:92%"></i></div><span class="sub2">得 27.6 分</span></div></div>
+            <div class="score-row"><div class="nm">准时交付率<span>权重 25% · 目标 ≥95%</span></div><input class="score-in" style="width:72px;height:30px;border:1px solid #DCE5E8;border-radius:6px;text-align:right;padding:0 8px" value="88"><div><div class="bar"><i style="width:88%"></i></div><span class="sub2">得 22.0 分</span></div></div>
+            <div class="score-row"><div class="nm">价格稳定性<span>权重 15% · 偏离 ≤3%</span></div><input class="score-in" style="width:72px;height:30px;border:1px solid #DCE5E8;border-radius:6px;text-align:right;padding:0 8px" value="80"><div><div class="bar"><i style="width:80%"></i></div><span class="sub2">得 12.0 分</span></div></div>
+            <div class="score-row"><div class="nm">服务响应<span>权重 20% · 2 小时内响应</span></div><input class="score-in" style="width:72px;height:30px;border:1px solid #DCE5E8;border-radius:6px;text-align:right;padding:0 8px" value="95"><div><div class="bar"><i style="width:95%"></i></div><span class="sub2">得 19.0 分</span></div></div>
+            <div class="score-row" style="border-bottom:0"><div class="nm">投诉与整改<span>权重 10% · 期内投诉 1 次</span></div><input class="score-in" style="width:72px;height:30px;border:1px solid #DCE5E8;border-radius:6px;text-align:right;padding:0 8px" value="75"><div><div class="bar"><i style="width:75%"></i></div><span class="sub2">得 7.5 分</span></div></div>
+            <hr class="sep">
+            <div style="display:flex;align-items:center;gap:16px">
+              <div><div class="sub2">本人加权总分</div><div style="font-size:28px;font-weight:600;color:#15344A;font-variant-numeric:tabular-nums">88.1</div></div>
+              <div><div class="sub2">建议等级</div><div><span class="lvl lvl-A">A</span> <span style="font-size:13px;color:#5B6E77">≥85 为 A</span></div></div>
+              <div style="margin-left:auto;display:flex;gap:8px"><button class="btn btn-default">暂存</button><button class="btn btn-primary">提交评分</button></div>
+            </div>
+            <div class="note" style="margin-top:12px">发布后不可修改。如需更正必须作废本次评价并重新发起，作废需填写不少于 5 个字的原因。</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <div class="card-h"><h2>多人评分汇总</h2><span class="sub">3 人独立评分</span></div>
+            <div class="tbl-wrap"><table>
+              <thead><tr><th>评分人</th><th>角色</th><th>得分</th><th>提交时间</th></tr></thead>
+              <tbody>
+                <tr><td>刘倩</td><td>评审人员</td><td class="tnum">88.1</td><td class="nowrap sub2">未提交</td></tr>
+                <tr><td>陈立</td><td>评审人员</td><td class="tnum">86.4</td><td class="nowrap sub2">2026-10-30 17:22</td></tr>
+                <tr><td>王涛</td><td>采购专员</td><td class="tnum">90.2</td><td class="nowrap sub2">2026-10-31 09:10</td></tr>
+              </tbody>
+            </table></div>
+            <div class="note" style="margin-top:12px">当前均分 <b>88.23</b>（2 人已提交）。全部提交后系统自动汇总，均分与权重得分一并写入评分快照。</div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><h2>等级趋势</h2><span class="sub">近 4 个周期</span></div>
+            <svg viewBox="0 0 420 160" width="100%" height="150">
+              <g stroke="#E8EEF0"><line x1="34" y1="24" x2="410" y2="24"/><line x1="34" y1="64" x2="410" y2="64"/><line x1="34" y1="104" x2="410" y2="104"/><line x1="34" y1="132" x2="410" y2="132"/></g>
+              <g font-size="10" fill="#8A9AA2"><text x="8" y="28">100</text><text x="14" y="68">90</text><text x="14" y="108">80</text><text x="18" y="136">70</text></g>
+              <polyline fill="none" stroke="#237A8B" stroke-width="2" points="70,72 160,64 250,52 350,44"/>
+              <g fill="#fff" stroke="#237A8B" stroke-width="2"><circle cx="70" cy="72" r="3.5"/><circle cx="160" cy="64" r="3.5"/><circle cx="250" cy="52" r="3.5"/><circle cx="350" cy="44" r="3.5"/></g>
+              <g font-size="10" fill="#5B6E77" text-anchor="middle"><text x="70" y="152">Q4'25</text><text x="160" y="152">Q1'26</text><text x="250" y="152">Q2'26</text><text x="350" y="152">Q3'26</text></g>
+            </svg>
+            <div class="note">等级由 B → B → A → A 递进，最近两期主要改善来自准时交付率（88% → 94%）。</div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><h2>整改要求</h2></div>
+            <div style="font-size:13px;color:var(--c-text-2);line-height:22px">本期投诉 1 次（包装破损），要求在 11 月 10 日前提交改进措施，采购专员验证后关闭。逾期未提交将转入限期整改状态。</div>
+            <div style="margin-top:12px"><button class="btn btn-default">发起整改任务</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("performance")</script>
+</body>
+</html>

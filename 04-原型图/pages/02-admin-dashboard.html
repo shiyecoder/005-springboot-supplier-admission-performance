@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>供应风险看板</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  .charts{grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:auto auto}
+  .c1{grid-row:span 1}
+  .content{padding:20px 24px}
+  .page-head{margin-bottom:14px}
+  .page-head h1{font-size:20px}
+  .metrics{grid-template-columns:repeat(6,1fr);gap:10px}
+  .metric{padding:12px 14px}
+  .metric .v{font-size:23px;line-height:28px}
+  .charts .chart{padding:12px 14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .legend{display:flex;gap:12px;font-size:11.5px;color:var(--c-text-2);margin-top:6px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+</style>
+</head>
+<body data-crumb="供应风险看板" data-user="周敏" data-role="采购管理员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>供应风险看板</h1><p>统计口径：2026-05-01 至 2026-10-31 · 数据更新于 2026-10-31 14:40</p></div>
+        <div class="right">
+          <select class="sel" style="width:150px"><option>最近 30 天</option><option>本季度</option><option>本年</option></select>
+          <button class="btn btn-default"><svg><use href="#i-refresh"/></svg>刷新</button>
+          <button class="btn btn-primary"><svg><use href="#i-export"/></svg>导出看板</button>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="k">准入通过率</div><div class="v">68.4<small>%</small></div><div class="d up">↑ 3.2% 较上月</div></div>
+        <div class="metric"><div class="k">资质到期（30天内）</div><div class="v">7<small> 家</small></div><div class="d down">↑ 2 家待处理</div></div>
+        <div class="metric"><div class="k">A 级供应商占比</div><div class="v">31.8<small>%</small></div><div class="d up">↑ 1.6%</div></div>
+        <div class="metric"><div class="k">交付及时率</div><div class="v">93.6<small>%</small></div><div class="d up">↑ 0.8%</div></div>
+        <div class="metric"><div class="k">质量合格率</div><div class="v">97.1<small>%</small></div><div class="d down">↓ 0.4%</div></div>
+        <div class="metric"><div class="k">风险供应商</div><div class="v">5<small> 家</small></div><div class="d">限期整改 3 · 暂停 2</div></div>
+      </div>
+
+      <div class="charts" style="margin-top:12px">
+        <div class="chart">
+          <h3>准入趋势</h3><div class="u">单位：件 · 近 6 个月申请与通过</div>
+          <svg viewBox="0 0 520 170" width="100%" height="150">
+            <g stroke="#E8EEF0"><line x1="40" y1="20" x2="510" y2="20"/><line x1="40" y1="60" x2="510" y2="60"/><line x1="40" y1="100" x2="510" y2="100"/><line x1="40" y1="140" x2="510" y2="140"/></g>
+            <g font-size="10" fill="#8A9AA2"><text x="10" y="24">60</text><text x="10" y="64">40</text><text x="10" y="104">20</text><text x="10" y="144">0</text></g>
+            <polyline fill="none" stroke="#15344A" stroke-width="2" points="70,96 150,78 230,84 310,58 390,46 470,38"/>
+            <polyline fill="none" stroke="#237A8B" stroke-width="2" stroke-dasharray="4 3" points="70,120 150,104 230,112 310,86 390,72 470,64"/>
+            <g fill="#fff" stroke="#15344A" stroke-width="2"><circle cx="70" cy="96" r="3.5"/><circle cx="150" cy="78" r="3.5"/><circle cx="230" cy="84" r="3.5"/><circle cx="310" cy="58" r="3.5"/><circle cx="390" cy="46" r="3.5"/><circle cx="470" cy="38" r="3.5"/></g>
+            <g fill="#237A8B"><circle cx="70" cy="120" r="3"/><circle cx="150" cy="104" r="3"/><circle cx="230" cy="112" r="3"/><circle cx="310" cy="86" r="3"/><circle cx="390" cy="72" r="3"/><circle cx="470" cy="64" r="3"/></g>
+            <g font-size="10.5" fill="#5B6E77" text-anchor="middle"><text x="70" y="162">5月</text><text x="150" y="162">6月</text><text x="230" y="162">7月</text><text x="310" y="162">8月</text><text x="390" y="162">9月</text><text x="470" y="162">10月</text></g>
+          </svg>
+          <div class="legend"><span><i style="background:#15344A"></i>提交申请</span><span><i style="background:#237A8B"></i>评审通过</span></div>
+        </div>
+
+        <div class="chart">
+          <h3>供应商等级分布</h3><div class="u">单位：家 · 共 22 家在册</div>
+          <svg viewBox="0 0 260 170" width="100%" height="150">
+            <g transform="translate(96,82)">
+              <circle r="52" fill="none" stroke="#EDF2F4" stroke-width="20"/>
+              <circle r="52" fill="none" stroke="#2D7A58" stroke-width="20" stroke-dasharray="104 223" transform="rotate(-90)"/>
+              <circle r="52" fill="none" stroke="#237A8B" stroke-width="20" stroke-dasharray="72 255" stroke-dashoffset="-104" transform="rotate(-90)"/>
+              <circle r="52" fill="none" stroke="#A9701F" stroke-width="20" stroke-dasharray="32 295" stroke-dashoffset="-176" transform="rotate(-90)"/>
+              <circle r="52" fill="none" stroke="#B03035" stroke-width="20" stroke-dasharray="15 312" stroke-dashoffset="-208" transform="rotate(-90)"/>
+              <text y="-2" text-anchor="middle" font-size="20" font-weight="600" fill="#15344A">22</text>
+              <text y="15" text-anchor="middle" font-size="10" fill="#8A9AA2">在册供应商</text>
+            </g>
+            <g font-size="11" fill="#5B6E77">
+              <rect x="176" y="30" width="8" height="8" rx="2" fill="#2D7A58"/><text x="190" y="38">A 级 7</text>
+              <rect x="176" y="56" width="8" height="8" rx="2" fill="#237A8B"/><text x="190" y="64">B 级 8</text>
+              <rect x="176" y="82" width="8" height="8" rx="2" fill="#A9701F"/><text x="190" y="90">C 级 5</text>
+              <rect x="176" y="108" width="8" height="8" rx="2" fill="#B03035"/><text x="190" y="116">D 级 2</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="chart">
+          <h3>供货类目分布</h3><div class="u">单位：家 · 按主类目统计</div>
+          <svg viewBox="0 0 300 170" width="100%" height="150">
+            <g font-size="10.5" fill="#5B6E77">
+              <text x="4" y="22">原材料</text><rect x="58" y="12" width="150" height="12" rx="3" fill="#15344A"/><text x="214" y="22">7</text>
+              <text x="4" y="50">电子件</text><rect x="58" y="40" width="128" height="12" rx="3" fill="#237A8B"/><text x="192" y="50">6</text>
+              <text x="4" y="78">包材</text><rect x="58" y="68" width="86" height="12" rx="3" fill="#2D5B6B"/><text x="150" y="78">4</text>
+              <text x="4" y="106">设备</text><rect x="58" y="96" width="64" height="12" rx="3" fill="#7FA6B0"/><text x="128" y="106">3</text>
+              <text x="4" y="134">服务</text><rect x="58" y="124" width="43" height="12" rx="3" fill="#A9701F"/><text x="107" y="134">2</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="chart">
+          <h3>证照到期预警</h3><div class="u">单位：张 · 按剩余天数分桶</div>
+          <svg viewBox="0 0 300 160" width="100%" height="140">
+            <g stroke="#E8EEF0"><line x1="34" y1="120" x2="290" y2="120"/><line x1="34" y1="80" x2="290" y2="80"/><line x1="34" y1="40" x2="290" y2="40"/></g>
+            <g>
+              <rect x="54" y="70" width="34" height="50" rx="3" fill="#B03035"/><text x="71" y="136" font-size="10" fill="#5B6E77" text-anchor="middle">已过期</text><text x="71" y="64" font-size="10" fill="#B03035" text-anchor="middle">4</text>
+              <rect x="106" y="88" width="34" height="32" rx="3" fill="#A9701F"/><text x="123" y="136" font-size="10" fill="#5B6E77" text-anchor="middle">≤30天</text><text x="123" y="82" font-size="10" fill="#A9701F" text-anchor="middle">3</text>
+              <rect x="158" y="56" width="34" height="64" rx="3" fill="#237A8B"/><text x="175" y="136" font-size="10" fill="#5B6E77" text-anchor="middle">31-90天</text><text x="175" y="50" font-size="10" fill="#237A8B" text-anchor="middle">6</text>
+              <rect x="210" y="80" width="34" height="40" rx="3" fill="#7FA6B0"/><text x="227" y="136" font-size="10" fill="#5B6E77" text-anchor="middle">>90天</text><text x="227" y="74" font-size="10" fill="#5B6E77" text-anchor="middle">9</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="chart">
+          <h3>绩效排名（前 5）</h3><div class="u">单位：分 · 2026 年第三季度综合得分</div>
+          <svg viewBox="0 0 300 160" width="100%" height="140">
+            <g font-size="10.5" fill="#5B6E77">
+              <text x="4" y="24">华鑫金属</text><rect x="66" y="14" width="170" height="11" rx="3" fill="#2D7A58"/><text x="242" y="24" fill="#2D7A58">94.2</text>
+              <text x="4" y="54">恒泰电子</text><rect x="66" y="44" width="156" height="11" rx="3" fill="#237A8B"/><text x="228" y="54">91.5</text>
+              <text x="4" y="84">瑞达包材</text><rect x="66" y="74" width="132" height="11" rx="3" fill="#237A8B"/><text x="204" y="84">87.9</text>
+              <text x="4" y="114">安泰物流</text><rect x="66" y="104" width="112" height="11" rx="3" fill="#A9701F"/><text x="184" y="114">82.4</text>
+              <text x="4" y="144">金鹏设备</text><rect x="66" y="134" width="90" height="11" rx="3" fill="#A9701F"/><text x="162" y="144">76.8</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="chart">
+          <h3>整改完成率</h3><div class="u">单位：% · 近 6 个月</div>
+          <svg viewBox="0 0 300 160" width="100%" height="140">
+            <g stroke="#E8EEF0"><line x1="30" y1="120" x2="290" y2="120"/><line x1="30" y1="80" x2="290" y2="80"/><line x1="30" y1="40" x2="290" y2="40"/></g>
+            <polyline fill="none" stroke="#2D5B6B" stroke-width="2" points="55,92 100,84 145,74 190,66 235,54 275,44"/>
+            <g fill="#fff" stroke="#2D5B6B" stroke-width="2"><circle cx="55" cy="92" r="3.2"/><circle cx="100" cy="84" r="3.2"/><circle cx="145" cy="74" r="3.2"/><circle cx="190" cy="66" r="3.2"/><circle cx="235" cy="54" r="3.2"/><circle cx="275" cy="44" r="3.2"/></g>
+            <g font-size="10" fill="#8A9AA2"><text x="18" y="124">0</text><text x="14" y="84">50</text><text x="14" y="44">100</text></g>
+            <g font-size="10" fill="#5B6E77" text-anchor="middle"><text x="55" y="140">5月</text><text x="100" y="140">6月</text><text x="145" y="140">7月</text><text x="190" y="140">8月</text><text x="235" y="140">9月</text><text x="275" y="140">10月</text></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("dashboard")</script>
+</body>
+</html>

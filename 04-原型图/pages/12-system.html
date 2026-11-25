@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>系统管理 · 角色与菜单</title>
+<link rel="stylesheet" href="../mock.css">
+<style>
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .role{padding:12px 14px;border:1px solid var(--c-border);border-radius:6px;margin-bottom:10px;cursor:pointer}
+  .role.on{border-color:var(--c-secondary);background:rgba(35,122,139,.05)}
+  .role .n{font-size:13.5px;font-weight:600}
+  .role .d{font-size:12px;color:var(--c-text-3);margin-top:2px}
+  .tree{font-size:13px}
+  .tree .l1{padding:8px 0;border-bottom:1px dashed var(--c-border);display:flex;align-items:center;gap:8px}
+  .tree .l2{padding:6px 0 6px 26px;color:var(--c-text-2);display:flex;align-items:center;gap:8px}
+  .tree .l2.hide{color:var(--c-text-3);text-decoration:line-through}
+  .tree label{display:flex;align-items:center;gap:8px;cursor:pointer}
+</style>
+</head>
+<body data-crumb="系统管理 / 角色与菜单" data-user="admin" data-role="超级管理员">
+<div class="app">
+  <div id="sidebar"></div>
+  <div class="main">
+    <div id="topbar"></div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1>系统管理</h1><p>菜单按角色权限动态获取；菜单权限与数据范围分别控制</p></div>
+        <div class="right"><button class="btn btn-primary"><svg><use href="#i-plus"/></svg>新增角色</button></div>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <div class="card-h"><h2>角色列表</h2><span class="sub">4 个内置角色</span></div>
+          <div class="role on"><div class="n">采购管理员 <span class="tag tag-primary" style="margin-left:6px">admin</span></div><div class="d">全部菜单 · 组织范围内全部数据 · 8 个账号</div></div>
+          <div class="role"><div class="n">采购专员 <span class="tag tag-info" style="margin-left:6px">buyer</span></div><div class="d">准入受理、评价发起、整改跟进 · 本人及本部门数据 · 5 个账号</div></div>
+          <div class="role"><div class="n">评审人员 <span class="tag tag-info" style="margin-left:6px">reviewer</span></div><div class="d">资质核验、评分 · 仅被指派的单据 · 4 个账号</div></div>
+          <div class="role"><div class="n">供应商联系人 <span class="tag tag-neutral" style="margin-left:6px">supplier</span></div><div class="d">门户菜单 · 仅本企业数据 · 22 个账号</div></div>
+          <hr class="sep">
+          <div class="group-t" style="margin-top:0">数据范围</div>
+          <div class="filter" style="gap:10px">
+            <div class="fi"><label>范围类型</label><select class="sel"><option>全部数据</option><option>本部门及下级</option><option>本部门</option><option>仅本人</option></select></div>
+            <div class="fi"><label>状态</label><select class="sel"><option>启用</option><option>停用</option></select></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><h2>为「采购管理员」分配菜单</h2><div class="right"><span class="sub">已选 27 / 30</span></div></div>
+          <div class="tree">
+            <div class="l1"><label><input type="checkbox" checked> 风险看板</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 供应商名录</label></div>
+            <div class="l2"><label><input type="checkbox" checked> 查看</label><label><input type="checkbox" checked> 编辑</label><label><input type="checkbox" checked> 导出</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 准入申请</label></div>
+            <div class="l2"><label><input type="checkbox" checked> 形式审查</label><label><input type="checkbox" checked> 审批</label><label><input type="checkbox" checked> 退回</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 证照与预警</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 绩效评价</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 整改管理</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 动态分层模型</label></div>
+            <div class="l2"><label><input type="checkbox" checked> 规则配置</label><label><input type="checkbox" checked> 人工修正</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 统计分析</label></div>
+            <div class="l1"><label><input type="checkbox" checked> 系统管理</label></div>
+            <div class="l2"><label><input type="checkbox" checked> 用户管理</label><label><input type="checkbox" checked> 角色管理</label></div>
+            <div class="l2 hide"><label><input type="checkbox"> 菜单管理（不对外展示）</label></div>
+            <div class="l2 hide"><label><input type="checkbox"> 分配菜单（从角色页进入）</label></div>
+          </div>
+          <div class="note" style="margin-top:14px">「菜单管理」与「分配菜单」不在侧边栏展示，仅通过角色页的分配入口进入，避免误操作打乱导航结构。</div>
+          <div style="margin-top:14px;display:flex;gap:8px;justify-content:flex-end"><button class="btn btn-default">重置</button><button class="btn btn-primary">保存权限</button></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h"><h2>账号列表</h2><div class="right"><button class="btn btn-default btn-sm">批量重置密码</button></div></div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>所属组织</th><th>联系方式</th><th>状态</th><th class="nowrap">最近登录</th><th class="nowrap">操作</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">admin</td><td>周敏</td><td>采购管理员</td><td>供应链中心</td><td class="sub2">138****0011</td><td><span class="tag tag-success">启用</span></td><td class="nowrap">2026-10-31 14:02</td><td class="nowrap"><a href="#">编辑</a> <a href="#">重置</a></td></tr>
+            <tr><td class="mono">buyer01</td><td>王涛</td><td>采购专员</td><td>采购一部</td><td class="sub2">139****2280</td><td><span class="tag tag-success">启用</span></td><td class="nowrap">2026-10-31 09:41</td><td class="nowrap"><a href="#">编辑</a> <a href="#">重置</a></td></tr>
+            <tr><td class="mono">reviewer01</td><td>刘倩</td><td>评审人员</td><td>质量管理部</td><td class="sub2">137****5566</td><td><span class="tag tag-success">启用</span></td><td class="nowrap">2026-10-30 17:20</td><td class="nowrap"><a href="#">编辑</a> <a href="#">重置</a></td></tr>
+            <tr><td class="mono">reviewer02</td><td>陈立</td><td>评审人员</td><td>技术中心</td><td class="sub2">136****9911</td><td><span class="tag tag-success">启用</span></td><td class="nowrap">2026-10-30 16:08</td><td class="nowrap"><a href="#">编辑</a> <a href="#">重置</a></td></tr>
+            <tr><td class="mono">sup001</td><td>李国强</td><td>供应商联系人</td><td>华鑫金属材料</td><td class="sub2">138****6721</td><td><span class="tag tag-success">启用</span></td><td class="nowrap">2026-10-29 10:33</td><td class="nowrap"><a href="#">编辑</a> <a href="#">停用</a></td></tr>
+          </tbody>
+        </table></div>
+        <div class="pager"><span>共 39 条</span><div class="pg"><span>‹</span><span class="on">1</span><span>2</span><span>3</span><span>›</span></div><select class="sel" style="width:100px;height:28px"><option>10 条/页</option><option>20 条/页</option><option>50 条/页</option></select></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../mock.js"></script>
+<script>renderShell("system")</script>
+</body>
+</html>
